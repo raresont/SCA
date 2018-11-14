@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Message" defaultHref="/app/tabs/(schedule:schedule)"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{session?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="session">
+    <div class="support-logo">
+      <img src="assets/img/download.png" alt="Ionic Logo">
+    </div>
+      <h1>{{session.tracks[0]}}</h1>
+      <p>{{session.location}}</p>
+
+    <form #submitForm="ngForm" novalidate (ngSubmit)="submit(submitForm)">
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label position="stacked" color="primary">Enter a message to be displayed on the unit screen</ion-label>
+          <ion-textarea [(ngModel)]="supportMessage" name="supportQuestion" #supportQuestion="ngModel" rows="6" required></ion-textarea>
+        </ion-item>
+      </ion-list>
+  
+      <ion-text color="danger">
+        <p [hidden]="supportQuestion.valid || submitted === false" padding-left>
+          A message is required
+        </p>
+      </ion-text>
+  
+      <div padding>
+        <ion-button expand="block" type="submit">Submit</ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color='primary' (click)="startApp()" [hidden]="!showSkip">Skip</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager="false">
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-1.png" class="slide-image" />
+      <h2 class="slide-title">
+        
+        <b>SCA</b>
+      </h2>
+      <p>
+        This is 
+        <b>the SCA unit app</b> and it is a practical preview of the communication with the sanitiser unit.
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-2.png" class="slide-image" />
+      <h2 class="slide-title">What you do with this App?</h2>
+      <p>You know the state of the units in the hospital and send commands to them in case of emergency.
+        Here you also view the statistics about the units.
+        <ion-button fill="clear" (click)="startApp()">
+            Continue
+            <ion-icon slot="end" name="arrow-forward"></ion-icon>
+          </ion-button>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

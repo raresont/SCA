@@ -1,0 +1,7 @@
+{
+  "name": "SCA",
+  "type": "angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
